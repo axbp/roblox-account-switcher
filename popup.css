@@ -1,0 +1,185 @@
+@font-face {
+    font-family: "Gotham";
+    src: 
+        url("resources/gothambook.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+	width: 280px;
+	height: auto;
+	-wekbit-font-smoothing: antialiased;
+}
+
+body {
+	background: rgb(35, 37, 39);
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-family: "Gotham", sans-serif;
+}
+
+.account-container {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.account-container > * {
+	width: 100%;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	background: transparent;
+	color: rgb(240, 240, 240);
+	text-align: left;
+	text-overflow: ellipsis;
+	padding-top: 4px;
+	cursor: pointer;
+	font-family: "Gotham", sans-serif;
+}
+
+.button-container {
+	padding-bottom: 5px;
+}
+
+img {
+	height: 20px;
+	position: relative;
+	margin-top: -3px;
+	margin-bottom: auto;
+	margin-right: 5px;
+	float: left;
+}
+
+.account img {
+	background-color: rgb(212,212,212);
+	border-radius: 100%;
+}
+.account code {
+	font-family: "Gotham";
+	background-color: rgb(22, 22, 22);
+	color: rgb(200, 200, 200);
+	border-radius: 2px;
+	padding: 3px;
+}
+.account:hover {
+	background-color: rgb(45, 47, 49);
+}
+
+.btn {
+	width: 100%;
+	height: 30px;
+	border: none;
+	border-radius: 3px;
+	color: white;
+	text-align: left !important;
+	background-color: transparent;
+	text-overflow: ellipsis;
+	margin-bottom: 5px;
+	cursor: pointer;
+	font-family: "Gotham", sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+}
+.btn:hover {
+	background-color: rgb(45, 47, 49);
+}
+
+.btn img {
+	filter: invert() opacity(90%);
+}
+
+h4 {
+	margin-top: 0px;
+}
+
+h1 {
+	margin-bottom: 5px;
+}
+
+.emoji {
+	height: 100%;
+	display: inline;
+	padding-right: 5px;
+}
+
+.header-container {
+	display: inline-block;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	font-size: .8em;
+	text-overflow: ellipsis; 
+	overflow: hidden; 
+	white-space: nowrap;
+}
+
+.header-container > * {
+	margin-top: 5px;
+	margin-bottom: 0;
+	user-select: none;
+}
+
+.root-container {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.menu-container {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 16;
+	display: block;
+	position: absolute;
+	width: calc(100% - 30px);
+	height: calc(100% - 30px);
+	margin: 15px;
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+	background: rgb(0, 0, 0, 0.75);
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
+	padding: 10px;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+
+.menu-container.hidden {
+	display: none;
+}
+
+.menu-container > * {
+	margin: 0;
+	margin-bottom: 5px;
+	word-wrap: break-word;
+}
+
+.menu-container > ol {
+	padding-left: 20px;
+}
+
+.menu-container > .title-center {
+	text-align: center;
+}
+
+a {
+	color: #02CAFE;
+}
+a:visited {
+	color: #45E2D1;
+}
+
+hr.divider {
+	border: none;
+	flex-shrink: 0;
+	height: 1px;
+	background-color: rgb(86, 88, 90);
+	color: rgb(86, 88, 90);
+	margin: 16px 0;
+}

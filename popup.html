@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Roblox Account Switcher</title>
+    <link rel="stylesheet" href="/popup.css" />
+	<meta charset="UTF-8">
+    <script src="popup.js"></script>
+  </head>
+  <body>
+	<div class="header-container">
+		<h1>Roblox Account Switcher</h1>
+	</div>
+	<div class="root-container">
+		<div class="account-container">
+			<button class="account"><img src="resources/icon.png">This is an account button <code>1251853252</code></button>
+		</div>
+		<hr class="divider">
+		<div class="button-container">
+			<button class="btn" id="add-account" title="Adds the logged in account to your stored accounts."><img src="resources/add.png">Add</button>
+			<button class="btn" id="usage-button" title="Opens the usage menu."><img src="resources/info.png">Usage</button>
+			<button class="btn" id="clear-account" title="Clears all accounts."><img src="resources/delete.png">Clear All Accounts</button>
+			<button class="btn" id="logout-account" title="Empties the current session. This does not function like the normal logout button as it does not invalidate the cookie."><img src="resources/logout.png">Logout</button>
+		</div>
+	</div>
+	<div class="menu-container hidden">
+		<h2 class="title-center">Roblox Account Switcher</h2>
+		<hr class="divider">
+		<p>
+		Usage:
+		</p>
+		
+		<ol>
+		<li>Log in to a Roblox account</li>
+		<li>Press the "Add" button</li>
+		<li>Press the "Logout" button</li>
+		<li>Log in to your next account</li>
+		<li>Repeat from step 2 until all accounts have been added</li>
+		<li>Click the account you want to use to swap accounts</li>
+		</ol>
+	
+		<hr class="divider">
+
+		<button class="btn" id="close-usage" title="Closes the usage menu.">Close</button>
+	</div>
+  </body>
+</html>

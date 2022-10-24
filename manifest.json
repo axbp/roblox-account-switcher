@@ -1,0 +1,21 @@
+{
+	"name": "Roblox Account Switcher",
+	"version": "0.0.1",
+	"description": "Save your Roblox session cookies and be able to quickly switch between them.",
+	"manifest_version": 3,
+	"action": {
+		"default_icon": "resources/icon.png",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+    "host_permissions": [
+        "*://*.roblox.com/"
+    ],
+	"permissions": [
+		"declarativeContent",
+		"cookies",
+		"storage"
+	]
+}
