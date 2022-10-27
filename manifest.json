@@ -16,6 +16,7 @@
 	"permissions": [
 		"declarativeContent",
 		"cookies",
-		"storage"
+		"storage",
+		"unlimitedStorage"
 	]
 }
