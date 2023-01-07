@@ -12,3 +12,19 @@ chrome.runtime.onInstalled.addListener(function() {
     ]);
   });
 });
+
+chrome.runtime.onStartup.addListener(function() {
+  chrome.storage.sync.get('lastrbxlogin', function(result) {
+		if (result.lastrbxlogin) {
+			chrome.cookies.set(
+        {
+          "url": "https://www.roblox.com",
+          "domain": ".roblox.com",
+          "name": ".ROBLOSECURITY",
+          "httpOnly": true,
+          "value": result.lastrbxlogin
+        },
+      );
+		}
+	});
+})
