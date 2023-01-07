@@ -30,6 +30,7 @@ function setToken(value, callback=false) {
         if(callback) {
             callback(cookie.value);
         }
+		chrome.storage.sync.set({lastrbxlogin: value})
 		chrome.tabs.reload(function(){});
     });
 }
@@ -74,10 +75,8 @@ function getStoreRefreshToken() {
 function readTokens(callback=false) {
 	chrome.storage.sync.get('rbxtokens', function(result) {
 		if (result.rbxtokens) {
-			console.log("found tokens");
 			tokens = result.rbxtokens[0];
 		} else {
-			console.log("oof");
 			tokens = {};
 		}
 		if (callback) { 
@@ -111,15 +110,20 @@ document.addEventListener('DOMContentLoaded', function() {
 		accountContainer.innerHTML = "";
 		for (var key in tokens) {
 			if (tokens.hasOwnProperty(key)) {
-				let value = tokens[key];
+				let account = tokens[key];
 				let tokenElement = document.createElement("button");
 				tokenElement.classList.add("account")
-				tokenElement.innerHTML = '<img src="https://www.roblox.com/headshot-thumbnail/image?userId=' + value.id + '&width=420&height=420&format=png>">' + value.name + " <code>" + value.id + "</code>"
 				tokenElement.rbxid = key
 				tokenElement.onclick = function() {
-					setToken(value.token);
+					setToken(account.token);
 				}
+				tokenElement.innerHTML = `<img src="https://thumbs.dreamstime.com/b/nerd-face-emoji-clever-emoticon-glasses-geek-student-nerd-face-emoji-clever-emoticon-glasses-geek-student-vector-172342923.jpg"> ${account.name} <code>${account.id}</code>`
 				accountContainer.appendChild(tokenElement);
+				fetch(`https://thumbnails.roblox.com/v1/users/avatar-headshot?size=100x100&format=png&userIds=${account.id}`).then(function(response) {
+					response.json().then(json => {
+						tokenElement.innerHTML = `<img src="${json.data[0].imageUrl}"> ${account.name} <code>${account.id}</code>`
+					})
+				})
 			}
 		}
 	}
